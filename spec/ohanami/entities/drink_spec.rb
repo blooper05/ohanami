@@ -1,3 +1,6 @@
 RSpec.describe Drink do
-  # place your tests here
+  it 'can be initialised with attributes' do
+    drink = Drink.new(name: 'sake')
+    expect(drink.name).to eq('sake')
+  end
 end
