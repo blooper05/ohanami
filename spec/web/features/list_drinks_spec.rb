@@ -1,11 +1,14 @@
 require 'features_helper'
 
 describe 'List drinks' do
-  it 'displays each drink on the page' do
-    visit '/drinks'
+  before do
+    DrinkRepository.clear
+    DrinkRepository.create(Drink.new(name: 'sake', country: 'japan'))
+    DrinkRepository.create(Drink.new(name: 'beer', country: 'japan'))
+  end
 
-    within '#drinks' do
-      expect(page).to have_css('.drink', count: 2)
-    end
+  it 'shows a drink element for each drink' do
+    visit '/drinks'
+    expect(page).to have_css('.drink', count: 2)
   end
 end
