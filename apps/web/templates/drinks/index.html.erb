@@ -1,11 +1,10 @@
-<h2>all drinks</h2>
-<div id="drinks">
-  <div class="drink">
-    <h3>Sake</h3>
-    <p>from <strong>Japan</strong></p>
-  </div>
-  <div class="drink">
-    <h3>Beer</h3>
-    <p>from <strong>Japan</strong></p>
-  </div>
-</div>
+<% if drinks.any? %>
+  <% drinks.each do |drink| %>
+    <div class="drink">
+      <h2><%= drink.name %></h2>
+      <p><%= drink.country %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p class="placeholder">There are no drinks yet.</p>
+<% end %>
