@@ -1,4 +1,0 @@
-project=ohanami
-architecture=container
-test=rspec
-template=erb
